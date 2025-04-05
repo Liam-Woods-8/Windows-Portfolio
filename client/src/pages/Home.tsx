@@ -411,12 +411,13 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <button className="win98-title-bar-button">×</button>
               </div>
             </div>
-            <form className="space-y-4">
+            <form action="https://formspree.io/f/xkgjqddr" method="POST" className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium win98-text">Name:</label>
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="mt-1 block w-full win98-inset p-1 focus:outline-none win98-text"
                 />
               </div>
@@ -425,6 +426,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="mt-1 block w-full win98-inset p-1 focus:outline-none win98-text"
                 />
               </div>
@@ -432,6 +434,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <label htmlFor="message" className="block text-sm font-medium win98-text">Message:</label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
                   className="mt-1 block w-full win98-inset p-1 focus:outline-none win98-text"
                 />
