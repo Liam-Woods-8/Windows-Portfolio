@@ -186,9 +186,9 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
           <div className="win98-title-bar mb-4">
             <span className="commodore-text">welcome.txt</span>
             <div className="win98-title-bar-controls">
-              <button className="win98-title-bar-button">_</button>
+              {/* <button className="win98-title-bar-button">_</button>
               <button className="win98-title-bar-button">□</button>
-              <button className="win98-title-bar-button">×</button>
+              <button className="win98-title-bar-button">×</button> */}
             </div>
           </div>
           <div className="p-4">
@@ -231,9 +231,9 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
             <div className="win98-title-bar">
               <span className="commodore-text">C:\My Projects\</span>
               <div className="win98-title-bar-controls">
-                <button className="win98-title-bar-button">_</button>
+                {/* <button className="win98-title-bar-button">_</button>
                 <button className="win98-title-bar-button">□</button>
-                <button className="win98-title-bar-button">×</button>
+                <button className="win98-title-bar-button">×</button> */}
               </div>
             </div>
             
@@ -431,9 +431,9 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
             <div className="win98-title-bar mb-4">
               <span className="commodore-text">contact.exe</span>
               <div className="win98-title-bar-controls">
-                <button className="win98-title-bar-button">_</button>
+                {/* <button className="win98-title-bar-button">_</button>
                 <button className="win98-title-bar-button">□</button>
-                <button className="win98-title-bar-button">×</button>
+                <button className="win98-title-bar-button">×</button> */}
               </div>
             </div>
             <form onSubmit={handleSubmit} action="https://formspree.io/f/xkgjqddr" method="POST" className="space-y-4">
