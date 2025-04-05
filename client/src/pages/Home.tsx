@@ -28,6 +28,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
     "Welcome to my portfolio! Initializing interface...",
     "Initializing portfolio interface...\nLoading components...\nEstablishing connection...\nRendering frontend..."
   ];
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   // Create progress bar segments function
   const renderProgressSegments = (percentage: number): ReactNode[] => {
@@ -120,6 +121,30 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
   const handleErrorClick = () => {
     setShowError(true);
     setTimeout(() => setShowError(false), 500);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xkgjqddr', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        form.reset();
+        setTimeout(() => setFormSubmitted(false), 3000); // Reset animation after 3 seconds
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+    }
   };
 
   if (loading) {
@@ -411,7 +436,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <button className="win98-title-bar-button">×</button>
               </div>
             </div>
-            <form action="https://formspree.io/f/xkgjqddr" method="POST" className="space-y-4">
+            <form onSubmit={handleSubmit} action="https://formspree.io/f/xkgjqddr" method="POST" className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium win98-text">Name:</label>
                 <input
@@ -445,6 +470,11 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
               >
                 Send Message
               </button>
+              {formSubmitted && (
+                <div className="win98-animation mt-4">
+                  <span className="commodore-text">Message Sent!</span>
+                </div>
+              )}
             </form>
           </div>
         </div>
@@ -509,5 +539,21 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
     </div>
   );
 };
+
+// Add CSS for the Windows 98 animation
+const win98Animation = `
+  .win98-animation {
+    animation: win98-flicker 2s linear infinite;
+    background-color: #c0c0c0;
+    border: 2px solid #000080;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Commodore64', var(--win98-font);
+  }
+`;
+
+// Inject the CSS into the document
+const styleSheet = document.styleSheets[0];
+styleSheet.insertRule(win98Animation, styleSheet.cssRules.length);
 
 export default Home; 
