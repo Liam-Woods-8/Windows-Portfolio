@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Footer: React.FC = () => {
   // Get current time in Windows 98 format (HH:MM AM/PM)
@@ -12,9 +12,18 @@ const Footer: React.FC = () => {
     return `${hours}:${minutes} ${ampm}`;
   };
 
+  const [time, setTime] = useState(getCurrentTime());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(getCurrentTime());
+    }, 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <footer className="win98-window fixed bottom-0 w-full">
-      <div className="win98-inset p-1 flex justify-between items-center text-sm">
+      <div className="win98-inset p-1 flex flex-col sm:flex-row justify-between items-center text-sm">
         <div className="flex items-center space-x-4">
           <button className="win98-btn py-0 px-2 flex items-center space-x-1">
             <span className="w-4 h-4 bg-[#000080] inline-block"></span>
@@ -42,7 +51,7 @@ const Footer: React.FC = () => {
             LinkedIn.exe
           </a>
           <div className="win98-inset px-2">
-            <span className="commodore-text">{getCurrentTime()}</span>
+            <span className="commodore-text">{time}</span>
           </div>
         </div>
       </div>

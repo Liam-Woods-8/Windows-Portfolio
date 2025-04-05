@@ -192,12 +192,6 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
               >
                 Get in Touch
               </button>
-              <button 
-                onClick={handleErrorClick}
-                className={`btn-primary ${showError ? 'win98-error' : ''}`}
-              >
-                <span className="commodore-text">!</span> Click Me
-              </button>
             </div>
           </div>
         </div>
@@ -282,33 +276,20 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                     <div onClick={() => handleProjectClick('#', 'Project 2')} 
                          className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#e0e0e0] p-2">
                       <img 
-                        src="https://win98icons.alexmeub.com/icons/png/application_executable-0.png" 
+                        src="/directory_closed-4.png" 
                         alt="Project 2" 
                         className="w-12 h-12 mb-1" 
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.onerror = null;
-                          target.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAEsAAABLAEEj9nEAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAMBQTFRF////AP//AMz/AJn/AJnMAJnMmf//mczMmcyZmZmZmcxmmcxmZsyZZsxmZpmZZplmZmZmZsxmMcyZMcxmMZlmMWZmMWYzMTMzM5lmM2ZmM2YzMzMzAJlmAGZmAGYzACQkAAAAAAAzAAAkgICAmZmZgICAgGZmmWZmgGZmZmZmgDMzZjMzZgAAMzMzZgAzMwAAJCQkQEBAMwAAJAAzJAAkAAAkAAAAJCQAEhISAAAAAAA1NTUAKioqAAAAExMTDQ0NDAwMCgoK6x05LAAAADx0Uk5TAAECBAYKDBEUFRYXGh4hJCUmJygpKy0wNjg+QUJFRlJVW19na3V5e3+Bh4+ZnaCkp7K4vcDFy9ne6+zv8OGVIJUAAAFKSURBVDiNrZPrVsIwEIUPAlILCCgoYC0S5aI0ECgCVbmo7/9SJpemLWcP/tjs2W+TnZnNbJR/Sq1RKrx55+3r84v/ynv+WlnPQhKQpF9OGlkDWfH7gPxVlkAqXwLQdRgMRKPvA5BbLgFdh8HgGLAEoJO+FHAMANUl8C8AVZsexwhNEWx8DhiE/gXQCd9OVID0A0oCGRIGfwEOBZQ9UrJz3E61QEZwE3L6XQSsP8CdOk5i+L4xUhSTCRf42nU4gAMUGdJFCbJZqM1G5lxOJlH8VQBGA2i2NYAvoTUazGb22UZoKo7ADMI52vZ2pTNJrZbQwL2Owew/LVdS99aaLsZhz4HXAED4ZaBv7VchxxgbFQQADwA1OzaWWb9w971jQPYCHAaVfeFZVmyOXb38+PeWAVYDRYXV9tz+b+C+AaWL0KLLjiuaQAAAABJRU5ErkJggg==";
-                        }}
                       />
                       <span className="win98-text text-center">Project 2.exe</span>
                     </div>
                     <div onClick={() => handleProjectClick('#', 'Project 3')} 
                          className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#e0e0e0] p-2">
                       <img 
-                        src="https://win98icons.alexmeub.com/icons/png/colors-0.png" 
+                        src="/directory_closed-4.png" 
                         alt="Project 3" 
                         className="w-12 h-12 mb-1" 
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.onerror = null;
-                          target.src = "data:image/png;base64,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";
-                        }}
                       />
-                      <span className="win98-text text-center">Project 3.bin</span>
-                      <span className="win98-blink mt-1 inline-block">
-                        <span className="bg-yellow-300 px-1 text-xs">New!</span>
-                      </span>
+                      <span className="win98-text text-center">Project 3.exe</span>
                     </div>
                   </div>
                 )}
