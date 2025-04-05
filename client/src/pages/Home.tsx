@@ -263,7 +263,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                   />
                   <span className="win98-text">Projects</span>
                 </div>
-                <div 
+                {/* <div 
                   className={`pl-2 py-1 flex items-center cursor-pointer ${activeFolder === 'archives' ? 'bg-[#000080] text-white' : 'hover:bg-[#e0e0e0]'}`}
                   onClick={() => toggleFolder('archives')}
                 >
@@ -273,7 +273,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                     className="w-4 h-4 mr-2" 
                   />
                   <span className="win98-text">Archives</span>
-                </div>
+                </div> */}
               </div>
               
               {/* Right Panel - Files */}
