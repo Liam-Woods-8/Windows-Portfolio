@@ -1,0 +1,487 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Commodore64';
+  src: url('./Commodore-64-v6.3.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Windows Animation Keyframes */
+@keyframes win98-boot {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0.8;
+    transform: scale(1.01);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes win98-flicker {
+  0% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.8;
+  }
+  94% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.9;
+  }
+  96% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0.9;
+  }
+  98% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes win98-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes win98-window-open {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes win98-error-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes win98-scan-line {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes win98-cursor-blink {
+  0%, 49% {
+    border-right: 2px solid black;
+  }
+  50%, 100% {
+    border-right: 2px solid transparent;
+  }
+}
+
+/* Windows 98 progress bar */
+@keyframes win98-progress-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.win98-progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid black;
+  box-sizing: content-box;
+}
+
+.win98-progress-segments {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.win98-progress-segment {
+  width: 20px;
+  height: 100%;
+  background-color: #4eff00;
+  margin-right: 5px;
+  animation: win98-progress-blink 1.5s infinite;
+}
+
+.win98-progress-segment:nth-child(even) {
+  animation-delay: 0.5s;
+}
+
+.win98-progress-text {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+:root {
+  --win98-gray: #c0c0c0;
+  --win98-dark: #808080;
+  --win98-darker: #404040;
+  --win98-light: #dfdfdf;
+  --win98-white: #ffffff;
+  --win98-black: #000000;
+  --win98-blue: #000080;
+  --win98-font: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply bg-[#c0c0c0] text-black;
+    margin: 0;
+    font-family: var(--win98-font);
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: pixelated;
+    font-size: 12px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Commodore64', var(--win98-font);
+  }
+
+  p, div, span, a, button, input, textarea, select, li {
+    font-family: var(--win98-font);
+  }
+
+  code {
+    font-family: 'Courier New', monospace;
+  }
+}
+
+@layer components {
+  .win98-window {
+    @apply bg-[#c0c0c0] border-solid border-[3px];
+    border-color: var(--win98-light) var(--win98-darker) var(--win98-darker) var(--win98-light);
+    box-shadow: -1px -1px 0 var(--win98-dark), 1px 1px 0 var(--win98-white);
+    animation: win98-window-open 0.3s ease-out;
+  }
+
+  .win98-boot-animation {
+    animation: win98-boot 3s ease-in-out;
+  }
+
+  .win98-flicker {
+    animation: win98-flicker 2s linear infinite;
+  }
+
+  .win98-blink {
+    animation: win98-blink 1s step-end infinite;
+  }
+
+  .win98-error {
+    animation: win98-error-shake 0.5s linear;
+  }
+
+  .win98-scan-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .win98-scan-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, 
+                               rgba(255,255,255,0) 0%,
+                               rgba(255,255,255,0.1) 50%,
+                               rgba(255,255,255,0) 100%);
+    background-size: 100% 8px;
+    pointer-events: none;
+    animation: win98-scan-line 8s linear infinite;
+  }
+
+  .win98-cursor {
+    animation: win98-cursor-blink 1s step-end infinite;
+  }
+
+  .win98-btn {
+    @apply px-4 py-1 bg-[#c0c0c0] border-solid border-[2px] cursor-pointer;
+    border-color: var(--win98-white) var(--win98-darker) var(--win98-darker) var(--win98-white);
+    box-shadow: 1px 1px 0 var(--win98-dark);
+    font-family: var(--win98-font);
+    transition: transform 0.1s ease;
+  }
+
+  .win98-btn:active {
+    border-color: var(--win98-darker) var(--win98-white) var(--win98-white) var(--win98-darker);
+    box-shadow: -1px -1px 0 var(--win98-dark);
+    transform: translateY(1px);
+  }
+
+  .win98-inset {
+    @apply border-solid border-[2px];
+    border-color: var(--win98-darker) var(--win98-white) var(--win98-white) var(--win98-darker);
+    background: var(--win98-white);
+  }
+
+  .nav-link {
+    @apply text-black hover:text-[#000080] transition-none;
+    font-family: var(--win98-font);
+  }
+
+  .btn-primary {
+    @apply bg-[#c0c0c0] border-solid border-[2px] cursor-pointer text-black px-4 py-1;
+    border-color: var(--win98-white) var(--win98-darker) var(--win98-darker) var(--win98-white);
+    box-shadow: 1px 1px 0 var(--win98-dark);
+    font-family: var(--win98-font);
+    transition: transform 0.1s ease;
+  }
+
+  .btn-primary:active {
+    border-color: var(--win98-darker) var(--win98-white) var(--win98-white) var(--win98-darker);
+    box-shadow: -1px -1px 0 var(--win98-dark);
+    transform: translateY(1px);
+  }
+
+  .btn-secondary {
+    @apply bg-[#c0c0c0] border-solid border-[2px] cursor-pointer text-black px-4 py-1;
+    border-color: var(--win98-white) var(--win98-darker) var(--win98-darker) var(--win98-white);
+    box-shadow: 1px 1px 0 var(--win98-dark);
+    font-family: var(--win98-font);
+    transition: transform 0.1s ease;
+  }
+
+  .btn-secondary:active {
+    border-color: var(--win98-darker) var(--win98-white) var(--win98-white) var(--win98-darker);
+    box-shadow: -1px -1px 0 var(--win98-dark);
+    transform: translateY(1px);
+  }
+
+  .card {
+    @apply win98-window p-4;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold mb-6 text-[#000080];
+    font-family: 'Commodore64', var(--win98-font);
+  }
+
+  .section-subtitle {
+    @apply text-xl text-black mb-4;
+    font-family: var(--win98-font);
+  }
+
+  .commodore-text {
+    font-family: 'Commodore64', var(--win98-font);
+  }
+
+  .win98-text {
+    font-family: var(--win98-font);
+  }
+
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    display: inline-block;
+    animation: 
+      typing 3.5s steps(40, end),
+      win98-cursor-blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+}
+
+/* Windows 98 Title Bar */
+.win98-title-bar {
+  @apply bg-[#000080] text-white px-2 py-1 flex justify-between items-center;
+  font-weight: bold;
+  font-family: 'Commodore64', var(--win98-font);
+}
+
+.win98-title-bar-controls {
+  @apply flex gap-1;
+}
+
+.win98-title-bar-button {
+  @apply px-2 py-0 min-w-[20px] text-center bg-[#c0c0c0] border-solid border-[2px] cursor-pointer;
+  border-color: var(--win98-white) var(--win98-darker) var(--win98-darker) var(--win98-white);
+  box-shadow: 1px 1px 0 var(--win98-dark);
+  font-family: var(--win98-font);
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.win98-title-bar-button:active {
+  border-color: var(--win98-darker) var(--win98-white) var(--win98-white) var(--win98-darker);
+  box-shadow: -1px -1px 0 var(--win98-dark);
+  transform: translateY(1px);
+}
+
+/* Marquee text animation */
+.win98-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.win98-marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: win98-marquee 15s linear infinite;
+}
+
+@keyframes win98-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Terminal styling */
+.terminal-screen {
+  position: relative;
+  background-color: #000;
+  box-shadow: 0 0 15px rgba(40, 255, 40, 0.2);
+  color: #42ff42;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.terminal-glow {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(40, 255, 40, 0.05) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  opacity: 0.4;
+  z-index: 5;
+}
+
+.terminal-cursor {
+  color: #42ff42;
+  font-weight: bold;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Increase text glow for better readability */
+.terminal-container {
+  text-shadow: 0 0 5px rgba(40, 255, 40, 0.5);
+}
+
+/* Windows 98 Loading Animation */
+.win98-progress-fill {
+  height: 100%;
+  background-color: #000080;
+  width: 0%;
+}
+
+@keyframes progress {
+  0% { width: 5%; }
+  10% { width: 15%; }
+  20% { width: 25%; }
+  30% { width: 35%; }
+  50% { width: 45%; }
+  65% { width: 55%; }
+  80% { width: 65%; }
+  90% { width: 85%; }
+  95% { width: 95%; }
+  100% { width: 100%; }
+}
+
+.animate-progress {
+  animation: progress 1.5s forwards;
+}
+
+.animate-pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+} 

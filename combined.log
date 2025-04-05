@@ -1,0 +1,38 @@
+{"errorLabelSet":{},"level":"error","message":"MongoDB Connection Error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":null,"maxSetVersion":null,"servers":{"localhost:27017":{"$clusterTime":null,"address":"localhost:27017","arbiters":[],"electionId":null,"error":{"beforeHandshake":false,"errorLabelSet":{}},"hosts":[],"iscryptd":false,"lastUpdateTime":449601363,"lastWriteDate":0,"logicalSessionTimeoutMinutes":null,"maxBsonObjectSize":null,"maxMessageSizeBytes":null,"maxWireVersion":0,"maxWriteBatchSize":null,"me":null,"minRoundTripTime":0,"minWireVersion":0,"passives":[],"primary":null,"roundTripTime":-1,"setName":null,"setVersion":null,"tags":{},"topologyVersion":null,"type":"Unknown"}},"setName":null,"stale":false,"type":"Unknown"},"stack":"MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n    at _handleConnectionErrors (C:\\Users\\Liam\\OneDrive\\Desktop\\latestportfolio\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n    at NativeConnection.openUri (C:\\Users\\Liam\\OneDrive\\Desktop\\latestportfolio\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n    at async connectDB (file:///C:/Users/Liam/OneDrive/Desktop/latestportfolio/server.js:73:18)\n    at async file:///C:/Users/Liam/OneDrive/Desktop/latestportfolio/server.js:84:1","timestamp":"2025-04-05T02:53:51.860Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:03:50.548Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-01.r5doug9.mongodb.net","timestamp":"2025-04-05T03:03:50.968Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:04:14.841Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-02.r5doug9.mongodb.net","timestamp":"2025-04-05T03:04:15.151Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:04:15.905Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-00.r5doug9.mongodb.net","timestamp":"2025-04-05T03:04:16.206Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:04:17.342Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-01.r5doug9.mongodb.net","timestamp":"2025-04-05T03:04:17.662Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:04:34.559Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-02.r5doug9.mongodb.net","timestamp":"2025-04-05T03:04:34.865Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:04:35.708Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-00.r5doug9.mongodb.net","timestamp":"2025-04-05T03:04:36.008Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:04:43.276Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-01.r5doug9.mongodb.net","timestamp":"2025-04-05T03:04:43.592Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:06:56.279Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-01.r5doug9.mongodb.net","timestamp":"2025-04-05T03:06:56.764Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:08:11.791Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-01.r5doug9.mongodb.net","timestamp":"2025-04-05T03:08:12.201Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:08:21.342Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-02.r5doug9.mongodb.net","timestamp":"2025-04-05T03:08:21.652Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:08:25.396Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-00.r5doug9.mongodb.net","timestamp":"2025-04-05T03:08:25.695Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:08:27.413Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-01.r5doug9.mongodb.net","timestamp":"2025-04-05T03:08:27.735Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:08:40.442Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-02.r5doug9.mongodb.net","timestamp":"2025-04-05T03:08:40.760Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:25:31.619Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-02.r5doug9.mongodb.net","timestamp":"2025-04-05T03:25:32.078Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:25:53.357Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-00.r5doug9.mongodb.net","timestamp":"2025-04-05T03:25:53.681Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:28:57.012Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T03:28:58.493Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-00.r5doug9.mongodb.net","timestamp":"2025-04-05T03:28:58.801Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T04:55:49.872Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-01.r5doug9.mongodb.net","timestamp":"2025-04-05T04:55:50.599Z"}
+{"level":"info","message":"Server running in development mode on port 5000","timestamp":"2025-04-05T05:06:11.822Z"}
+{"level":"info","message":"MongoDB Connected: ac-xuzboog-shard-00-00.r5doug9.mongodb.net","timestamp":"2025-04-05T05:06:12.267Z"}
