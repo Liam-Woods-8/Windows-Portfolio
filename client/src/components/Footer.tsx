@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
             GitHub.exe
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/liamantoniowoods/"
             target="_blank"
             rel="noopener noreferrer"
             className="win98-btn text-sm commodore-text"
