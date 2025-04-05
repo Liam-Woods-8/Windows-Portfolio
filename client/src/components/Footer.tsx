@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex items-center space-x-2">
           <a
-            href="https://github.com"
+            href="https://github.com/Liam-Woods-8?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="win98-btn text-sm commodore-text"
