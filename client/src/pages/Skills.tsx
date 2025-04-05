@@ -10,7 +10,7 @@ const Skills: React.FC = () => {
             <span className="commodore-text">frontend.dll</span>
           </div>
           <h3 className="text-xl font-bold mb-2 commodore-text">Frontend</h3>
-          <p className="text-black win98-text mb-2">React, TypeScript, Tailwind</p>
+          <p className="text-black win98-text mb-2">HTML5, CSS3, JavaScript ES6+, React.js, Tailwind, Bootstrap, Git</p>
           <div className="win98-progress-bar mt-2 relative">
             <div className="win98-progress-segments animate-progress" style={{ width: '80%' }}></div>
             <div className="win98-progress-text">80%</div>
@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
             <span className="commodore-text">backend.dll</span>
           </div>
           <h3 className="text-xl font-bold mb-2 commodore-text">Backend</h3>
-          <p className="text-black win98-text mb-2">Node.js, Express, MongoDB</p>
+          <p className="text-black win98-text mb-2">JavaScript, Node.js, Python, AWS</p>
           <div className="win98-progress-bar mt-2 relative">
             <div className="win98-progress-segments animate-progress" style={{ width: '75%' }}></div>
             <div className="win98-progress-text">75%</div>
@@ -32,7 +32,7 @@ const Skills: React.FC = () => {
             <span className="commodore-text">tools.dll</span>
           </div>
           <h3 className="text-xl font-bold mb-2 commodore-text">Tools</h3>
-          <p className="text-black win98-text mb-2">Git, VS Code, Docker</p>
+          <p className="text-black win98-text mb-2">VS Code, GitHub, Figma, Vite</p>
           <div className="win98-progress-bar mt-2 relative">
             <div className="win98-progress-segments animate-progress" style={{ width: '90%' }}></div>
             <div className="win98-progress-text">90%</div>
