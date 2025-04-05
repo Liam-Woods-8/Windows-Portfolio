@@ -156,8 +156,8 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
   return (
     <div className="pt-16 pb-16 win98-scan-effect">
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center mb-80">
-        <div className="win98-window max-w-4xl mx-auto px-4 py-8 text-center">
+      <section id="home" className="min-h-screen flex flex-col items-center justify-center mb-80 px-4">
+        <div className="win98-window w-full max-w-4xl mx-auto px-4 py-8 text-center">
           <div className="win98-title-bar mb-4">
             <span className="commodore-text">welcome.txt</span>
             <div className="win98-title-bar-controls">
@@ -167,7 +167,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
             </div>
           </div>
           <div className="p-4">
-            <h1 className="text-4xl font-bold mb-6 commodore-text text-[#000080]">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-6 commodore-text text-[#000080]">
               Welcome to My Portfolio
             </h1>
             <div className="win98-marquee mb-2 win98-inset p-1">
@@ -175,7 +175,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <span className="win98-text">Welcome to my retro Windows portfolio - check out my projects and skills!</span>
               </div>
             </div>
-            <p className="text-xl mb-8 max-w-2xl mx-auto win98-text">
+            <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto win98-text">
               I'm a passionate developer with expertise in modern web technologies.
               Let's build something amazing together.
             </p>
