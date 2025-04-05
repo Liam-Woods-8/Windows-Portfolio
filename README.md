@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portfolio Website
 
 A modern, responsive portfolio website built with the MERN stack (MongoDB, Express.js, React, Node.js).
@@ -88,3 +89,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Liam Woods - [@yourtwitter](https://twitter.com/yourtwitter)
 
 Project Link: [https://github.com/yourusername/portfolio-2025](https://github.com/yourusername/portfolio-2025) 
+=======
+# Windows-Portfolio
+Interactive MERN stack web portfolio with a windows 98 theme.
+>>>>>>> 8083478f6dbeb039189b72cd53c1babbc29d8d04
