@@ -293,9 +293,6 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                         }}
                       />
                       <span className="win98-text text-center">TravelExplorer.html</span>
-                      <span className="win98-blink mt-1 inline-block">
-                        <span className="bg-yellow-300 px-1 text-xs">New!</span>
-                      </span>
                       <p className="text-xs text-center mt-1 text-gray-600">APIs & Async JS</p>
                     </div>
                     <div onClick={() => handleProjectClick('https://liam-woods-8.github.io/Eko/home.html', 'Eko')} 
@@ -309,6 +306,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                       <span className="win98-blink mt-1 inline-block">
                         <span className="bg-yellow-300 px-1 text-xs">New!</span>
                       </span>
+                      <p className="text-xs text-center mt-1 text-gray-600">APIs & Async JS</p>
                     </div>
                     <div onClick={() => handleProjectClick('#', 'Project 3')} 
                          className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#e0e0e0] p-2">
