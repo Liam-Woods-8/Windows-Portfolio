@@ -303,7 +303,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                         className="w-12 h-12 mb-1" 
                       />
                       <span className="win98-text text-center">Project 2.exe</span>
-                      <span className="win98-blink mt-1 inline-block">
+                      <span className="win98-blink mt-1 inline-block ml-2">
                         <span className="bg-yellow-300 px-1 text-xs">New!</span>
                       </span>
                       <p className="text-xs text-center mt-1 text-gray-600">APIs & Async JS</p>
