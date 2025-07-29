@@ -181,7 +181,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
   return (
     <div className="pt-16 pb-16 win98-scan-effect">
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col items-center justify-center mb-80 px-4">
+      <section id="home" className="min-h-screen flex flex-col items-center justify-center mb-40 px-4">
         <div className="win98-window w-full max-w-4xl mx-auto px-4 py-8 text-center">
           <div className="win98-title-bar mb-4">
             <span className="commodore-text">welcome.txt</span>
@@ -197,12 +197,12 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
             </h1>
             <div className="win98-marquee mb-2 win98-inset p-1">
               <div className="win98-marquee-content">
-                <span className="win98-text">Welcome to my retro Windows portfolio - check out my projects and skills!</span>
+                <span className="win98-text">Welcome to my Portfolio - Check out some of my projects and skills below</span>
               </div>
             </div>
             <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto win98-text">
-              I'm a passionate developer with expertise in modern web technologies.
-              Let's build something amazing together.
+              I'm a passionate full stackdeveloper with expertise in modern web technologies.
+          
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button 
@@ -223,7 +223,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
       </section>
 
       {/* Projects Section - Windows 98 Explorer Style */}
-      <section id="projects" className="py-32 mb-80">
+      <section id="projects" className="py-16 mb-40">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center commodore-text win98-flicker mb-16">My Projects</h2>
           
@@ -364,7 +364,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-32 mb-80 bg-[#c0c0c0]">
+      <section id="skills" className="py-16 mb-40 bg-[#c0c0c0]">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center commodore-text mb-16">My Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -425,7 +425,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32">
+      <section id="contact" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center commodore-text mb-16">Contact Me</h2>
           <div className="max-w-md mx-auto win98-window p-4">
@@ -522,7 +522,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;
-                    target.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAbwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG+SURBVDiNnZK9S1thFMZ/9+bGm6TaEIODXbpoXISutUPoIAFp6dChkx0KwcGtf0K7ZnHQqYvQTYciiCCdRBcpxWIVFUxpvtX74ftw6A00Mclz4HDgPc/vPO/7nFfcPX6itdaXZVkjpXTXe/8YeAp8B74APbvdvp7NZr9SShkKKSWXUspF+AJ8Bl4AL0WkEUK4n8/n747H4++7u7v9lFJRQNoJvAoh4O4sLy8vR6PRO6ABfAJ+7O/vD2u12lsRGZdz3gLw3hNjJITA9PT0FEBEJLz3jcFgsLS5uTk8ODiYAW6GEHKWZZEQAgAaY3wrIvPFaAgxRgBCCJfDw8NnwFvgWp7n1xqNxtzGxsYl8BFYcc5djDEOQghRRLwA2NvbqwKvgOVer/cBWBSRezHGx3Nzc7da63PAOvC8Xq9/VUqhAFRrfQd4HUJoiMiMMWZBKXXfWrtYqVQemJm2tfZ2Pp9/opRqaq3xxeJwOAQwxWLx8fj9YDCgXC4PsyxrK6UupJQ6Zr1et0qpEWCBz977X6VSqQxUrLVVY8xfpdSlUqrjnDtl+kfnHM1ms12tVp3W+hgoFIvFUqfTeQ/8YeLk/JcXAPwDwGD5Vm5vra0AAAAASUVORK5CYII=";
+                    target.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAbwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3Njape.org5vuPBoAAAG+SURBVDiNnZK9S1thFMZ/9+bGm6TaEIODXbpoXISutUPoIAFp6dChkx0KwcGtf0K7ZnHQqYvQTYciiCCdRBcpxWIVFUxpvtX74ftw6A00Mclz4HDgPc/vPO/7nFfcPX6itdaXZVkjpXTXe/8YeAp8B74APbvdvp7NZr9SShkKKSWXUspF+AJ8Bl4AL0WkEUK4n8/n747H4++7u7v9lFJRQNoJvAoh4O4sLy8vR6PRO6ABfAJ+7O/vD2u12lsRGZdz3gLw3hNjJITA9PT0FEBEJLz3jcFgsLS5uTk8ODiYAW6GEHKWZZEQAgAaY3wrIvPFaAgxRgBCCJfDw8NnwFvgWp7n1xqNxtzGxsYl8BFYcc5djDEOQghRRLwA2NvbqwKvgOVer/cBWBSRezHGx3Nzc7da63PAOvC8Xq9/VUqhAFRrfQd4HUJoiMiMMWZBKXXfWrtYqVQemJm2tfZ2Pp9/opRqaq3xxeJwOAQwxWLx8fj9YDCgXC4PsyxrK6UupJQ6Zr1et0qpEWCBz977X6VSqQxUrLVVY8xfpdSlUqrjnDtl+kfnHM1ms12tVp3W+hgoFIvFUqfTeQ/8YeLk/JcXAPwDwGD5Vm5vra0AAAAASUVORK5CYII=";
                   }}
                 />
                 <p className="win98-text">Please wait...</p>
