@@ -411,7 +411,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <span className="commodore-text">frontend.dll</span>
               </div>
               <h3 className="text-xl font-bold mb-2 commodore-text">Frontend</h3>
-              <p className="text-black win98-text mb-2">React, TypeScript, Tailwind</p>
+              <p className="text-black win98-text mb-2">React JS, React Native, TypeScript, Tailwind, Bootstrap</p>
               <div className="win98-progress-bar mt-2 relative">
                 <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
                   {skillsLoaded && renderProgressSegments(80)}
@@ -424,7 +424,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <span className="commodore-text">backend.dll</span>
               </div>
               <h3 className="text-xl font-bold mb-2 commodore-text">Backend</h3>
-              <p className="text-black win98-text mb-2">Node.js, Express, MongoDB</p>
+              <p className="text-black win98-text mb-2">Node.js, Python, Express, MongoDB, AWS, Firebase</p>
               <div className="win98-progress-bar mt-2 relative">
                 <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
                   {skillsLoaded && renderProgressSegments(75)}
@@ -437,7 +437,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                 <span className="commodore-text">tools.dll</span>
               </div>
               <h3 className="text-xl font-bold mb-2 commodore-text">Tools</h3>
-              <p className="text-black win98-text mb-2">Git, VS Code, Docker</p>
+              <p className="text-black win98-text mb-2">Git, VS Code, Docker, XCode, Figma</p>
               <div className="win98-progress-bar mt-2 relative">
                 <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
                   {skillsLoaded && renderProgressSegments(90)}
