@@ -29,6 +29,14 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
     "Initializing portfolio interface...\nLoading components...\nEstablishing connection...\nRendering frontend..."
   ];
   const [formSubmitted, setFormSubmitted] = useState(false);
+  
+  // Ensure loading starts properly
+  useEffect(() => {
+    // Force loading to start if it hasn't already
+    if (!loading) {
+      setLoading(true);
+    }
+  }, []);
 
   // Create progress bar segments function
   const renderProgressSegments = (percentage: number): ReactNode[] => {
@@ -64,6 +72,14 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
   useEffect(() => {
     // Notify parent component of loading state changes
     onLoadingChange?.(loading);
+    
+    // Force start loading animation if accessed through embedded browsers
+    const isEmbeddedBrowser = /(LinkedInApp|FBAN|FBAV|Instagram|Twitter)/i.test(navigator.userAgent);
+    
+    if (isEmbeddedBrowser) {
+      // Start loading immediately for embedded browsers
+      setLoading(true);
+    }
     
     // Simulate Windows boot sequence
     const bootTimer = setTimeout(() => {
@@ -173,6 +189,27 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
             <span className="text-green-400">{typedCommands.length < terminalCommands.length ? '' : 'Loading portfolio...'}</span>
             <span className="terminal-cursor animate-blink">█</span>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback for when loading doesn't start properly
+  if (!loading && !bootComplete) {
+    return (
+      <div className="h-screen flex flex-col justify-center items-center bg-black text-green-500 p-8 font-mono">
+        <div className="text-center">
+          <h1 className="text-2xl mb-4">Portfolio Loading...</h1>
+          <p className="mb-4">If the loading animation doesn't start automatically, click below:</p>
+          <button 
+            onClick={() => {
+              setLoading(true);
+              setBootComplete(false);
+            }}
+            className="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-400 transition-colors"
+          >
+            Start Portfolio
+          </button>
         </div>
       </div>
     );
@@ -311,11 +348,12 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                     <div onClick={() => handleProjectClick('#', 'Project 3')} 
                          className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#e0e0e0] p-2">
                       <img 
-                        src="/directory_closed-4.png" 
-                        alt="Project 3" 
+                        src="https://win98icons.alexmeub.com/icons/png/compressed_folder-0.png" 
+                        alt="Coming Soon" 
                         className="w-12 h-12 mb-1" 
                       />
-                      <span className="win98-text text-center">Project 3.exe</span>
+                      <span className="win98-text text-center">Coming Soon.exe</span>
+                      <p className="text-xs text-center mt-1 text-gray-600">Under Development</p>
                     </div>
                   </div>
                 )}
