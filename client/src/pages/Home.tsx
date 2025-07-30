@@ -405,54 +405,54 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
       <section id="skills" className="py-16 mb-40 bg-[#c0c0c0]">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center commodore-text mb-16">My Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="card text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="card text-center min-h-[200px] flex flex-col">
               <div className="win98-title-bar mb-2">
                 <span className="commodore-text">frontend.dll</span>
               </div>
-              <h3 className="text-xl font-bold mb-2 commodore-text">Frontend</h3>
-              <p className="text-black win98-text mb-2">React JS, React Native, TypeScript, Tailwind, Bootstrap</p>
-              <div className="win98-progress-bar mt-2 relative">
-                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
+              <h3 className="text-lg md:text-xl font-bold mb-2 commodore-text">Frontend</h3>
+              <p className="text-black win98-text mb-2 text-sm md:text-base flex-grow">React JS, React Native, TypeScript, Tailwind, Bootstrap</p>
+              <div className="win98-progress-bar mt-auto relative w-full">
+                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out', width: '80%' }}>
                   {skillsLoaded && renderProgressSegments(80)}
                 </div>
                 <div className="win98-progress-text">80%</div>
               </div>
             </div>
-            <div className="card text-center">
+            <div className="card text-center min-h-[200px] flex flex-col">
               <div className="win98-title-bar mb-2">
                 <span className="commodore-text">backend.dll</span>
               </div>
-              <h3 className="text-xl font-bold mb-2 commodore-text">Backend</h3>
-              <p className="text-black win98-text mb-2">Node.js, Python, Express, MongoDB, AWS, Firebase</p>
-              <div className="win98-progress-bar mt-2 relative">
-                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
+              <h3 className="text-lg md:text-xl font-bold mb-2 commodore-text">Backend</h3>
+              <p className="text-black win98-text mb-2 text-sm md:text-base flex-grow">Node.js, Python, Express, MongoDB, AWS, Firebase</p>
+              <div className="win98-progress-bar mt-auto relative w-full">
+                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out', width: '75%' }}>
                   {skillsLoaded && renderProgressSegments(75)}
                 </div>
                 <div className="win98-progress-text">75%</div>
               </div>
             </div>
-            <div className="card text-center">
+            <div className="card text-center min-h-[200px] flex flex-col">
               <div className="win98-title-bar mb-2">
                 <span className="commodore-text">tools.dll</span>
               </div>
-              <h3 className="text-xl font-bold mb-2 commodore-text">Tools</h3>
-              <p className="text-black win98-text mb-2">Git, VS Code, Docker, XCode, Figma</p>
-              <div className="win98-progress-bar mt-2 relative">
-                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
+              <h3 className="text-lg md:text-xl font-bold mb-2 commodore-text">Tools</h3>
+              <p className="text-black win98-text mb-2 text-sm md:text-base flex-grow">Git, VS Code, Docker, XCode, Figma</p>
+              <div className="win98-progress-bar mt-auto relative w-full">
+                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out', width: '90%' }}>
                   {skillsLoaded && renderProgressSegments(90)}
                 </div>
                 <div className="win98-progress-text">90%</div>
               </div>
             </div>
-            <div className="card text-center">
+            <div className="card text-center min-h-[200px] flex flex-col">
               <div className="win98-title-bar mb-2">
                 <span className="commodore-text">softskills.dll</span>
               </div>
-              <h3 className="text-xl font-bold mb-2 commodore-text">Soft Skills</h3>
-              <p className="text-black win98-text mb-2">Communication, Teamwork, Problem-solving</p>
-              <div className="win98-progress-bar mt-2 relative">
-                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out' }}>
+              <h3 className="text-lg md:text-xl font-bold mb-2 commodore-text">Soft Skills</h3>
+              <p className="text-black win98-text mb-2 text-sm md:text-base flex-grow">Communication, Teamwork, Problem-solving</p>
+              <div className="win98-progress-bar mt-auto relative w-full">
+                <div className="win98-progress-segments" style={{ opacity: skillsLoaded ? 1 : 0, transition: 'opacity 1s ease-in-out', width: '85%' }}>
                   {skillsLoaded && renderProgressSegments(85)}
                 </div>
                 <div className="win98-progress-text">85%</div>
