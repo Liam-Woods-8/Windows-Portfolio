@@ -197,7 +197,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
               {/* Right Panel - Project Files */}
               <div className="w-3/4 bg-white p-4">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  <div onClick={() => handleProjectClick('https://liam-woods-8.github.io/TravelExplorer/', 'TravelExplorer')} 
+                  <div onClick={() => handleProjectClick('https://liam-woods-8.github.io/TravelExplorer/home.html', 'TravelExplorer')} 
                     className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#e0e0e0] p-2">
                     <img 
                       src="https://win98icons.alexmeub.com/icons/png/html-0.png" 
