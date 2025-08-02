@@ -36,6 +36,13 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
     if (!loading) {
       setLoading(true);
     }
+    
+    // Additional check for mobile devices
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile && !loading) {
+      console.log('Mobile device detected, ensuring loading state');
+      setLoading(true);
+    }
   }, []);
 
   // Create progress bar segments function
@@ -73,13 +80,23 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
     // Notify parent component of loading state changes
     onLoadingChange?.(loading);
     
-    // Force start loading animation if accessed through embedded browsers
-    const isEmbeddedBrowser = /(LinkedInApp|FBAN|FBAV|Instagram|Twitter)/i.test(navigator.userAgent);
+    // Enhanced detection for embedded browsers and mobile apps
+    const isEmbeddedBrowser = /(LinkedInApp|FBAN|FBAV|Instagram|Twitter|Line|WhatsApp|Telegram)/i.test(navigator.userAgent);
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    if (isEmbeddedBrowser) {
-      // Start loading immediately for embedded browsers
+    // Force start loading animation for embedded browsers or mobile devices
+    if (isEmbeddedBrowser || isMobile) {
+      console.log('Detected embedded browser or mobile device, forcing loading state');
       setLoading(true);
     }
+    
+    // Add a timeout fallback to ensure loading starts even if detection fails
+    const fallbackTimer = setTimeout(() => {
+      if (!loading) {
+        console.log('Fallback: Starting loading animation');
+        setLoading(true);
+      }
+    }, 1000);
     
     // Simulate Windows boot sequence
     const bootTimer = setTimeout(() => {
@@ -129,6 +146,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
 
     return () => {
       clearTimeout(bootTimer);
+      clearTimeout(fallbackTimer);
       clearInterval(typeCommandTimer);
       window.removeEventListener('scroll', handleScroll);
     };
@@ -433,7 +451,7 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
               </div>
             </div>
             <div className="card text-center min-h-[200px] flex flex-col">
-              <div className="win98-title-bar mb-2">
+                            <div className="win98-title-bar mb-2">
                 <span className="commodore-text">tools.dll</span>
               </div>
               <h3 className="text-lg md:text-xl font-bold mb-2 commodore-text">Tools</h3>
