@@ -35,14 +35,14 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
     // Notify parent component
     onLoadingChange?.(true);
     
-    // Start the boot sequence
+    // Start the boot sequence - much faster now
     const bootTimer = setTimeout(() => {
       setLoading(false);
       setBootComplete(true);
-      onLoadingChange?.(false);
-    }, 4000); // Reduced from 5 seconds to 4 seconds
+      onLoadingChange?.(false); // Tell App component loading is complete
+    }, 2500); // Reduced from 4 seconds to 2.5 seconds
 
-    // Typewriter effect
+    // Typewriter effect - faster
     let commandIndex = 0;
     let charIndex = 0;
     
@@ -62,10 +62,10 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
             setCurrentCommand(prev => prev + 1);
             commandIndex++;
             charIndex = 0;
-          }, 300); // Reduced delay
+          }, 150); // Reduced delay
         }
       }
-    }, 80); // Faster typing
+    }, 50); // Much faster typing
 
     // Skills loading
     const handleScroll = () => {

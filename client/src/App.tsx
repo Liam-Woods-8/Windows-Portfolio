@@ -14,7 +14,7 @@ function App() {
     // Set a timeout to ensure loading completes even if Home component doesn't respond
     const fallbackTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000); // 5 second fallback
+    }, 3000); // Reduced from 5 seconds to 3 seconds to match faster Home loading
 
     return () => clearTimeout(fallbackTimer);
   }, []);
