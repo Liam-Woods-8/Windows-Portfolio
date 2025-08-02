@@ -215,11 +215,11 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
                   <div onClick={() => handleProjectClick('https://liam-woods-8.github.io/Eko/home.html', 'Eko')} 
                     className="flex flex-col items-center justify-center cursor-pointer hover:bg-[#e0e0e0] p-2">
                     <img 
-                      src="/directory_closed-4.png" 
-                      alt="Project 2" 
+                      src="https://win98icons.alexmeub.com/icons/png/earth-0.png" 
+                      alt="EKO" 
                       className="w-12 h-12 mb-1" 
                     />
-                    <span className="win98-text text-center">Project 2.exe</span>
+                    <span className="win98-text text-center">EKO.html</span>
                     <span className="win98-blink mt-1 inline-block ml-2">
                       <span className="bg-yellow-300 px-1 text-xs">New!</span>
                     </span>
