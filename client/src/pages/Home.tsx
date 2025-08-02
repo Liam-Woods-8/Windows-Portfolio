@@ -5,7 +5,6 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
-  const [loading, setLoading] = useState(true);
   const [bootComplete, setBootComplete] = useState(false);
   const [typedCommands, setTypedCommands] = useState<string[]>([]);
   const [currentCommand, setCurrentCommand] = useState(0);
@@ -27,20 +26,15 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
     "✓ Frontend rendered"
   ];
 
-  // Force loading to start immediately on mobile
+  // Initialize the component
   useEffect(() => {
-    // Immediately set loading to true for all devices
-    setLoading(true);
+    // Notify parent component that we're ready
+    onLoadingChange?.(false);
     
-    // Notify parent component
-    onLoadingChange?.(true);
-    
-    // Start the boot sequence - much faster now
+    // Start the boot sequence for visual effect only
     const bootTimer = setTimeout(() => {
-      setLoading(false);
       setBootComplete(true);
-      onLoadingChange?.(false); // Tell App component loading is complete
-    }, 2500); // Reduced from 4 seconds to 2.5 seconds
+    }, 2500);
 
     // Typewriter effect - faster
     let commandIndex = 0;
@@ -62,10 +56,10 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
             setCurrentCommand(prev => prev + 1);
             commandIndex++;
             charIndex = 0;
-          }, 150); // Reduced delay
+          }, 150);
         }
       }
-    }, 50); // Much faster typing
+    }, 50);
 
     // Skills loading
     const handleScroll = () => {
@@ -139,37 +133,6 @@ const Home: React.FC<HomeProps> = ({ onLoadingChange }) => {
       console.error('Form submission error:', error);
     }
   };
-
-  if (loading) {
-    return (
-      <div className="h-screen flex flex-col justify-start bg-black text-green-500 p-8 font-mono terminal-screen overflow-hidden">
-        <div className="scanlines absolute inset-0 pointer-events-none"></div>
-        <div className="terminal-glow absolute inset-0 pointer-events-none"></div>
-        <div className="terminal-container flex-grow overflow-auto">
-          <div className="mb-4">
-            <p className="text-green-400 opacity-90">[system] Linux 2.6.32 (tty1)</p>
-            <p className="text-green-400 opacity-90">Last login: {new Date().toLocaleString()} from localhost</p>
-            <p className="mb-6 text-green-400 opacity-90">PORTFOLIO-OS v1.0.3 / (c) {new Date().getFullYear()} Liam</p>
-          </div>
-          
-          {typedCommands.map((command, index) => (
-            <div key={index} className="mb-4">
-              <p className="text-green-400">liam@portfolio:~$ {command && typeof command === 'string' ? command.replace('$ ', '') : command}</p>
-              {index < currentCommand && (
-                <pre className="text-green-300 ml-2 text-sm whitespace-pre-wrap">{terminalOutputs[index]}</pre>
-              )}
-            </div>
-          ))}
-          
-          <div className="flex items-center">
-            <span className="text-green-400 mr-0">liam@portfolio:~$ </span>
-            <span className="text-green-400">{typedCommands.length < terminalCommands.length ? '' : 'Loading portfolio...'}</span>
-            <span className="terminal-cursor animate-blink">█</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="pt-16 pb-16 win98-scan-effect">

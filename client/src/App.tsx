@@ -4,20 +4,7 @@ import Home from './pages/Home.tsx';
 import Footer from './components/Footer.tsx';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Force loading to start immediately for all devices, especially mobile
-  useEffect(() => {
-    // Immediately start the loading process
-    setIsLoading(true);
-    
-    // Set a timeout to ensure loading completes even if Home component doesn't respond
-    const fallbackTimer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // Reduced from 5 seconds to 3 seconds to match faster Home loading
-
-    return () => clearTimeout(fallbackTimer);
-  }, []);
+  const [isLoading, setIsLoading] = useState(false); // Start with false to show content immediately
 
   // Function to handle loading state changes from Home component
   const handleLoadingChange = (loadingState: boolean) => {
@@ -26,11 +13,11 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {!isLoading && <Navbar />}
+      <Navbar />
       <main className="flex-grow">
         <Home onLoadingChange={handleLoadingChange} />
       </main>
-      {!isLoading && <Footer />}
+      <Footer />
     </div>
   );
 }
